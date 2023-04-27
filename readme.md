@@ -31,15 +31,11 @@ This feature will display the current day using the built-in datetime library in
 
 Mark plant as watered. This feature will enable the user to let the program know which plant has been watered so that it does not show up as needing watering until required. 
 
-## Feature 5 - View entire plant list 
+## Feature #5 - View entire plant list 
 This feature will allow the user to view the entire list of plants they have added to the schedule and show when they were all last watered. 
 
-## Feature 6 - Exit program
+## Feature #6 - Exit program
 This feature will allow the user to exit the program. 
-
-```python
-print("Exiting program. Thank you.")
-```
 
 # Implementation Plan
 
@@ -93,7 +89,7 @@ This means that if the user misses a watering one of their plants for a couple o
 
 For example, if a user assigns a plant to the schedule that needs to be watered every week. If they forgot to water their plant for 3 days, and then mark as complete. If we assigned it a weekday, it would show as needing to be watered 4 days later. However, if we assign the date/time, whenever they mark it as complete, it will then show up as being watered 7 days later. One week.
 
-## Feature 5 - View entire plant list 
+## Feature #5 - View entire plant list 
 
 For this feature, it can be implemented by looping through the entire .json file and printing out the "key" that we assign to the plant names, and print them all out. We can also print out when they were last watered. 
 
@@ -101,7 +97,7 @@ For this feature, it can be implemented by looping through the entire .json file
 print(f"{file_name[0]["name"]}, which was last watered  {file_name[1]["last_watered"]} days ago.")
 ```
 
-## Feature 6 - Exit program
+## Feature #6 - Exit program
 
 When the user enters a certain input, we can break out of the loop (program) and exit with a friendly message. 
 
@@ -109,9 +105,50 @@ When the user enters a certain input, we can break out of the loop (program) and
 print("Thank you for using the plant watering schedule. See you next time")
 ```
 
-Project Management Platform: Trello
+## Project Management Platform
 
-(INSERT SCREEN SHOTS LATER)
+I have used Trello to track tasks, add deadlines, prioritise different features and add checklists for each feature.
+
+Each card has a color to show how much resources in time it will roughly take. They also include colorblind feature mode. The colors are;
+
+- Green (SMALL) 
+    - 1-2 hours of effort:
+- Orange (MEDIUM)
+    - medium: 2-4 hours of effort
+= Red (LARGE) 
+    - large: 4-8 hours of effort
+
+### Overview
+
+![overview](./docs/overview.png)
+
+### Create .json File 
+
+![create](./docs/create_file.png)
+
+### Feature #1 - Add plant to schedule 
+
+![feature_1](./docs/feature_1.png)
+
+### Feature #2 - Remove plant from schedule 
+
+![feature_2](./docs/feature_2.png)
+
+### Feature #3 - View plants that need watering
+
+![feature_3](./docs/feature_3.png)
+
+### Feature #4 - Mark plant as watered
+
+![feature_4](./docs/feature_4.png)
+
+### Feature #5 - View entire plant list 
+
+![feature_5](./docs/feature_5.png)
+
+### Feature #6 - Exit program
+
+![feature_6](./docs/feature_6.png)
 
 # Design Help Documentation 
 
