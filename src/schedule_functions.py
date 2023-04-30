@@ -12,16 +12,12 @@ class PlantSchedule:
         try: 
             with open(self.file_name) as f:
                 schedule_data = json.load(f)
-
             # If it exists, then all fine
-            print("In try block")
-            print(schedule_data)
 
         # If it does not exit, create and write new file
         except FileNotFoundError as e:
             with open(self.file_name, "w") as f:
                 json.dump(data, f)
-            print("In except block")
 
     # Function to add new plant to schedule
     def add_plant(self):
@@ -65,9 +61,9 @@ class PlantSchedule:
                     break
             except ValueError as e:
                 print("Invalid input! Please enter a number greater than or equal to 0. \nType 'q' or 'quit' to exit to main menu and start again.")
-        print(f"This plant needs {amount_of_water} mL every {frequency}.")
+        print(f"This plant needs {amount_of_water} mL every {frequency[:-2]}.")
         print("-------------------------------------------")
-
+        
         with open(self.file_name) as f:
             schedule_data = json.load(f)
             schedule_data.append({
@@ -77,19 +73,9 @@ class PlantSchedule:
                 "Water_Needed": amount_of_water
             })
 
-        print(schedule_data)
-
         with open(self.file_name, 'w') as json_file:
                 json.dump(schedule_data, json_file, 
                                     indent=4,  
                                     separators=(',',': '))
-
-
-        print(name)
-        print(frequency)
-        print(last_watered)
-        print(amount_of_water)
-        
-        timedelta_last_watered = timedelta(days=int_last_watered)
-        print(timedelta_last_watered)
-        print(type(timedelta_last_watered))
+                
+    

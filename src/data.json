@@ -1,20 +1,26 @@
 [
     {
-        "Name": "Monny",
+        "Name": "Monstera",
         "Frequency": "weekly",
-        "Last_Watered": "5",
-        "Water_Needed": "5"
-    },
-    {
-        "Name": "Fiddle",
-        "Frequency": "fortnightly",
-        "Last_Watered": "60",
+        "Last_Watered": "6",
         "Water_Needed": "1000"
     },
     {
-        "Name": "fifi",
-        "Frequency": "fortnightly",
-        "Last_Watered": "8",
-        "Water_Needed": "200"
+        "Name": "Fifi",
+        "Frequency": "monthly",
+        "Last_Watered": "50",
+        "Water_Needed": "4"
+    },
+    {
+        "Name": "Monny",
+        "Frequency": "weekly",
+        "Last_Watered": "5",
+        "Water_Needed": "6"
+    },
+    {
+        "Name": "d",
+        "Frequency": "monthly",
+        "Last_Watered": "6",
+        "Water_Needed": "400"
     }
 ]
