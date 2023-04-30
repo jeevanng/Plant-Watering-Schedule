@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, date, timedelta 
 
 class PlantSchedule:
     def __init__(self, file_name):
@@ -7,20 +8,22 @@ class PlantSchedule:
         file_name = "data.json"
         data = []
 
-        #Check to see if .json file exists 
+        # Check to see if .json file exists 
         try: 
-            with open(file_name) as f:
+            with open(self.file_name) as f:
                 schedule_data = json.load(f)
 
-            #If it exists, then all fine
+            # If it exists, then all fine
             print("In try block")
             print(schedule_data)
 
+        # If it does not exit, create and write new file
         except FileNotFoundError as e:
-            with open(file_name, "w") as f:
+            with open(self.file_name, "w") as f:
                 json.dump(data, f)
             print("In except block")
 
+    # Function to add new plant to schedule
     def add_plant(self):
         name = input("Enter name of plant: ")
         print(f"You entered {name}.")
@@ -67,12 +70,26 @@ class PlantSchedule:
 
         with open(self.file_name) as f:
             schedule_data = json.load(f)
+            schedule_data.append({
+                "Name": name,
+                "Frequency": frequency,
+                "Last_Watered": last_watered,
+                "Water_Needed": amount_of_water
+            })
 
         print(schedule_data)
+
+        with open(self.file_name, 'w') as json_file:
+                json.dump(schedule_data, json_file, 
+                                    indent=4,  
+                                    separators=(',',': '))
+
 
         print(name)
         print(frequency)
         print(last_watered)
         print(amount_of_water)
-
-
+        
+        timedelta_last_watered = timedelta(days=int_last_watered)
+        print(timedelta_last_watered)
+        print(type(timedelta_last_watered))
