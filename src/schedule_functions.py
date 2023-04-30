@@ -21,6 +21,7 @@ class PlantSchedule:
 
     # Function to add new plant to schedule
     def add_plant(self):
+        print("Add plant to Watering Schedule")
         name = input("Enter name of plant: ")
         print(f"You entered {name}.")
         print("-------------------------------------------")
@@ -65,17 +66,31 @@ class PlantSchedule:
         print("-------------------------------------------")
         
         with open(self.file_name) as f:
-            schedule_data = json.load(f)
-            schedule_data.append({
+            data = json.load(f)
+            data.append({
                 "Name": name,
                 "Frequency": frequency,
                 "Last_Watered": last_watered,
                 "Water_Needed": amount_of_water
             })
 
-        with open(self.file_name, 'w') as json_file:
-                json.dump(schedule_data, json_file, 
+        with open(self.file_name, "w") as json_file:
+            json.dump(data, json_file, 
+                                indent=4,  
+                                separators=(',',': '))
+                
+    def remove_plant(self):
+        print("Remove plant from Watering Schedule")
+        name = input("Enter the name of the plant you wish to remove from the watering schedule: ")
+        plant_list = []
+
+        with open(self.file_name) as f:
+            data = json.load(f)
+            for i in data:
+                if name != i["Name"]:
+                    plant_list.append(i)
+
+        with open(self.file_name, "w") as json_file:
+            json.dump(plant_list, json_file, 
                                     indent=4,  
                                     separators=(',',': '))
-                
-    
