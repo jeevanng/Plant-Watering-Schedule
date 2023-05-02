@@ -98,6 +98,20 @@ class PlantSchedule:
             json.dump(plant_list, json_file, 
                                     indent=4,  
                                     separators=(',',': '))
+    
+    def plants_need_watering(self):
+        now = datetime.now()
+
+        with open(self.file_name) as f:
+            data = json.load(f)
+        
+        print("These are the plants that need to be watered today;")
+        for plant in data:
+            last_watered_date_time = datetime.strptime(plant["Last_Watered"], '%Y-%m-%d')
+            difference_days = (now - last_watered_date_time).days
+
+            if plant["Frequency"].lower() == "weekly" and difference_days >= 7 or plant["Frequency"].lower() == "fortnightly" and difference_days >= 14 or plant["Frequency"].lower() == "monthly" and difference_days >= 30:
+                print(f"{plant['Name']}, last watered {difference_days} days ago ({plant['Frequency']} schedule)")
             
     def water_plant(self):
         print("Indicate that the plant has been watered")
@@ -157,6 +171,6 @@ class PlantSchedule:
 
             print("Your watering schedule contains the following plants;")
             for plant in data:
-                print(f"{plant['Name']}")
+                print(f"{plant['Name']}, last watered {plant['Last_Watered']} ({plant['Frequency']} schedule)" )
                 
     
