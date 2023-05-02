@@ -2,7 +2,19 @@
     {
         "Name": "Monny",
         "Frequency": "weekly",
-        "Last_Watered": "2023-05-22",
-        "Water_Needed": "500"
+        "Last_Watered": "2023-05-02",
+        "Water_Needed": "100"
+    },
+    {
+        "Name": "Naoise",
+        "Frequency": "monthly",
+        "Last_Watered": "2023-05-02",
+        "Water_Needed": "100"
+    },
+    {
+        "Name": "Jeevan",
+        "Frequency": "weekly",
+        "Last_Watered": "2023-05-02",
+        "Water_Needed": "100"
     }
 ]
