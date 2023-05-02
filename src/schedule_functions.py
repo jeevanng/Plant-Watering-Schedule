@@ -149,5 +149,14 @@ class PlantSchedule:
                                 separators=(',',': '))
         
         print(f"{name} has been updated to require {amount_of_water} mL of water.")
+
+    def view_all_plants(self):
+        
+        with open(self.file_name) as f:
+            data = json.load(f) 
+
+            print("Your watering schedule contains the following plants;")
+            for plant in data:
+                print(f"{plant['Name']}")
                 
     
