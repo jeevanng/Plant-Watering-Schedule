@@ -1,6 +1,7 @@
 import json
 from datetime import datetime, date, timedelta 
 
+
 class PlantSchedule:
     def __init__(self, file_name):
         self.file_name = file_name
@@ -40,21 +41,21 @@ class PlantSchedule:
         print("-------------------------------------------")
 
         while True:
-            last_watered = input("Enter when the plant was last watered (number in days): ")
-            if last_watered.lower() == "q" or last_watered.lower() == "quit":
+            last_watered_str = input("Enter the date of when the plant was last watered in this format (YYYY-MM-DD): ")
+            if last_watered_str.lower() == "q" or last_watered_str.lower() == "quit":
                 exit()
             try:
-                int_last_watered = int(last_watered)
-                if int_last_watered >= 0:
-                    break
+                last_watered = datetime.strptime(last_watered_str, '%Y-%m-%d')
+                break
             except ValueError as e:
-                print("Invalid input! Please enter a number greater than or equal to 0. \nType 'q' or 'quit' to exit to main menu.")
-        print(f"{name} was watered {last_watered} days ago.")
+                print("Invalid input! Please enter the date in the format YYYY-MM-DD. \nType 'q' or 'quit' to exit to main menu.")
+
+        print(f"{name} was watered on {last_watered_str}.")
         print("-------------------------------------------")
 
         while True:
             amount_of_water = input("Enter how much water the plant needs (mL): ")
-            if last_watered.lower() == "q" or last_watered.lower() == "quit":
+            if amount_of_water.lower() == "q" or amount_of_water.lower() == "quit":
                 exit()
             try:
                 int_amount_of_water = int(amount_of_water)
@@ -64,13 +65,15 @@ class PlantSchedule:
                 print("Invalid input! Please enter a number greater than or equal to 0. \nType 'q' or 'quit' to exit to main menu and start again.")
         print(f"This plant needs {amount_of_water} mL every {frequency[:-2]}.")
         print("-------------------------------------------")
+
+
         
         with open(self.file_name) as f:
             data = json.load(f)
             data.append({
                 "Name": name,
                 "Frequency": frequency,
-                "Last_Watered": last_watered,
+                "Last_Watered": last_watered_str,
                 "Water_Needed": amount_of_water
             })
 
@@ -86,9 +89,9 @@ class PlantSchedule:
 
         with open(self.file_name) as f:
             data = json.load(f)
-            for i in data:
-                if name != i["Name"]:
-                    plant_list.append(i)
+            for plant in data:
+                if name != plant["Name"]:
+                    plant_list.append(plant)
 
         with open(self.file_name, "w") as json_file:
             json.dump(plant_list, json_file, 
