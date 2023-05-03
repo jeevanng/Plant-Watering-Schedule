@@ -101,11 +101,11 @@ class PlantSchedule:
     
     def plants_need_watering(self):
         now = datetime.now()
-
+        print("These plants need to be watered today;")
+        
         with open(self.file_name) as f:
             data = json.load(f)
         
-        print("These are the plants that need to be watered today;")
         for plant in data:
             last_watered_date_time = datetime.strptime(plant["Last_Watered"], '%Y-%m-%d')
             difference_days = (now - last_watered_date_time).days

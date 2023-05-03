@@ -26,19 +26,13 @@
     {
         "Name": "plant2",
         "Frequency": "fortnightly",
-        "Last_Watered": "2023-04-18",
+        "Last_Watered": "2023-05-03",
         "Water_Needed": "100"
-    },
-    {
-        "Name": "plant3",
-        "Frequency": "monthly",
-        "Last_Watered": "2023-03-31",
-        "Water_Needed": "10000"
     },
     {
         "Name": "plant4",
         "Frequency": "weekly",
-        "Last_Watered": "2023-04-11",
+        "Last_Watered": "2023-05-02",
         "Water_Needed": "1000000"
     },
     {
@@ -62,7 +56,19 @@
     {
         "Name": "plant8",
         "Frequency": "fortnightly",
-        "Last_Watered": "2023-05-02",
+        "Last_Watered": "2023-05-03",
         "Water_Needed": "10"
+    },
+    {
+        "Name": "The best plant ever\"",
+        "Frequency": "Weekly",
+        "Last_Watered": "2023-05-02",
+        "Water_Needed": "2"
+    },
+    {
+        "Name": "Naoise 2.0",
+        "Frequency": "WEEKLY",
+        "Last_Watered": "2023-05-03",
+        "Water_Needed": "1000"
     }
 ]
