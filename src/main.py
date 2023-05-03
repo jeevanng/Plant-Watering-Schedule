@@ -3,6 +3,8 @@ from schedule_functions import PlantSchedule
 
 file_name = "data.json"
 
+# Check/create the .json file
+schedule = PlantSchedule(file_name)
 
 def create_menu():
     print("1. Enter 1 to add a new plant to your schedule")
@@ -19,8 +21,7 @@ user_choice = ""
 
 while user_choice != "7":
     user_choice = create_menu()
-    schedule = PlantSchedule(file_name)
-
+    
     if user_choice == "1":
         schedule.add_plant()
     elif user_choice == "2":
