@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Fifi",
+        "Frequency": "monthly",
+        "Last_Watered": "2023-04-10",
+        "Water_Needed": "300"
+    },
+    {
+        "Name": "Lola",
+        "Frequency": "monthly",
+        "Last_Watered": "2023-04-10",
+        "Water_Needed": "300"
+    }
+]
