@@ -4,9 +4,17 @@ Written by Jeevan Ng
 
 # Source Control Repository 
 
+https://github.com/jeevanng/Plant-Watering-Schedule
+
 # Code Style Guide 
 
+The code styling guide followed is PEP 8. 
 
+Find documentation on the style guide below: 
+
+https://peps.python.org/pep-0008/
+
+I have used pycodestyle to check code for conformance and autoformatted using the program autopep8. Both installed via pip. 
 
 # List of Features
 
