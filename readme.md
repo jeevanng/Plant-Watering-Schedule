@@ -160,8 +160,6 @@ Each card has a color to show how much resources in time it will roughly take. T
 
 ![feature_6](./docs/feature_6.png)
 
-# Design Help Documentation 
-
 # Testing
 
 ## Testing Method #1 (MANUAL)
@@ -308,3 +306,6 @@ def test_remove_plant():
 ```
 
 I have created a test_data.json file, to store the information without altering the originals. I change the assertions, according to what data is in the .json file, and which variables I am testing. I will comment out the remove testing part and vice versa, to test each function separately. 
+
+# Design Help Documentation 
+
