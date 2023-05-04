@@ -156,6 +156,8 @@ Each card has a color to show how much resources in time it will roughly take. T
 
 # Testing
 
+## Testing Method #1 (MANUAL)
+
 Please click link below to see excel spreadsheet: 
 
 [Testing spreadsheet (PDF)](./docs/testing.pdf)
@@ -255,3 +257,46 @@ Otherwise, the table has been converted for mark up language;
 |                                              |     |                                             | 2    | Print off plant names (i.e. "Name" key)                                                     | passed | Loop through data.json to print plant names                                       |               |                          |  |  |  |  |  |
 |                                              |     |                                             | 3    | Print off other data that the programmer wishes the user to see                             | passed | Displays other information as desired                                             |               |                          |  |  |  |  |  |
 |                                              |     |       
+
+## Testing Method #2 (PYTEST)
+
+I have used pytest to test two main functions of the program. Whether the function adds the plants and other corresponding information correctly, and whether it removes the plant/information and shows the correct length for the total data. 
+
+Here is the code;
+
+```python
+import pytest
+import json
+
+from schedule_functions import PlantSchedule
+from unittest.mock import patch
+
+
+file_name = "test_data.json"
+
+def test_add_plant():
+    with patch('builtins.input', side_effect=["Monstera", "monthly", "2023-04-10", "300"]):
+        test_add = PlantSchedule(file_name)
+        test_add.add_plant()
+
+    with open(file_name) as f:
+        data = json.load(f)
+
+    assert len(data) == 1
+    assert data[0]["Name"] == "Monstera"
+    assert data[0]["Frequency"] == "monthly"
+    assert data[0]["Last_Watered"] == "2023-04-10"
+    assert data[0]["Water_Needed"] == "300"
+
+def test_remove_plant():
+    with patch('builtins.input', side_effect=["Monstera", "monthly", "2023-04-10", "300"]):
+        test_add = PlantSchedule(file_name)
+        test_add.remove_plant()
+    
+    with open(file_name) as f:
+        data = json.load(f)
+
+    assert len(data) == 2
+```
+
+I have created a test_data.json file, to store the information without altering the originals. I change the assertions, according to what data is in the .json file, and which variables I am testing. I will comment out the remove testing part and vice versa, to test each function separately. 
