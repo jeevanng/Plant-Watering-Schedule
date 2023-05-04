@@ -6,6 +6,8 @@ Written by Jeevan Ng
 
 # Code Style Guide 
 
+
+
 # List of Features
 
 This terminal application will allow a user to create their own plant watering schedule for three different frequencies; weekly, fortnightly and monthly. 
@@ -151,4 +153,14 @@ Each card has a color to show how much resources in time it will roughly take. T
 ![feature_6](./docs/feature_6.png)
 
 # Design Help Documentation 
+
+# Testing
+
+Please click link below to see excel spreadsheet: 
+
+[Testing spreadsheet (PDF)](./docs/testing.pdf)
+
+Otherwise, the table has been converted for mark up language;
+
+
 

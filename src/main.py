@@ -7,13 +7,14 @@ file_name = "data.json"
 schedule = PlantSchedule(file_name)
 
 def create_menu():
-    print("1. Enter 1 to add a new plant to your schedule")
-    print("2. Enter 2 to remove a plant from your schedule")
-    print("3. Enter 3 to view which plants need watering today")
-    print("4. Enter 4 to mark a plant as watered")
-    print("5. Enter 5 to update the amount of water needed for a plant")
-    print("6. Enter 6 to view entire plant list")
-    print("7. Enter 7 to exit the program")
+    print("1. Enter 1 to Add a new plant to your schedule")
+    print("2. Enter 2 to Remove a plant from your schedule")
+    print("3. Enter 3 to View which plants need watering today")
+    print("4. Enter 4 to Mark a plant as watered")
+    print("5. Enter 5 to Update the amount of water needed for a plant")
+    print("6. Enter 6 to View entire plant list")
+    print("7. Enter 7 to Exit the program")
+    print("--------------------------------")
     choice = input("Enter your selection: ")
     return choice
 
@@ -38,7 +39,8 @@ while user_choice != "7":
         continue 
     else:
         print("Invalid input. Please enter a number between 1-7")
-
+    
+    print("--------------------------------")
     input("Press enter to continue...")
 
 print("Thank you for using the plant watering schedule. See you next time!")

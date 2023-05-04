@@ -119,12 +119,12 @@ class PlantSchedule:
     def water_plant(self):
         print("Indicate that the plant has been watered")
         name = input("Type the name of which plant has been watered (case sensitive): ")
-
+        today = date.today()
+        today_str = today.strftime('%Y-%m-%d')
+        
         with open(self.file_name) as f:
             data = json.load(f)
-            today = date.today()
-            today_str = today.strftime('%Y-%m-%d')
-
+            
             for plant in data: 
                 if name == plant["Name"]:
                     plant["Last_Watered"] = today_str 
