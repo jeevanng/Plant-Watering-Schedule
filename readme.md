@@ -199,6 +199,8 @@ Each card has a color to show how much resources in time it will roughly take. T
 
 ### Overview
 
+Link to trello board: https://trello.com/b/GK7ZGXRW/plant-watering-schedule
+
 ![overview](./docs/overview.png)
 
 ### Create .json File 
