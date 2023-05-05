@@ -1,22 +1,34 @@
 import json
+import colored
+
 from schedule_functions import PlantSchedule
+from colored import fg, bg, attr
+from colored import stylize
+
+angry = bg("indian_red_1a") + fg("white") + colored.attr("bold")
+invalid = colored.fg("red")
+text = colored.fg(107)
+selection = colored.fg(3) + colored.attr("bold")
 
 file_name = "data.json"
-
 # Check/create the .json file
 schedule = PlantSchedule(file_name)
 
 
 def create_menu():
-    print("1. Enter 1 to Add a new plant to your schedule")
-    print("2. Enter 2 to Remove a plant from your schedule")
-    print("3. Enter 3 to View which plants need watering today")
-    print("4. Enter 4 to Mark a plant as watered")
-    print("5. Enter 5 to Update the amount of water needed for a plant")
-    print("6. Enter 6 to View entire plant list")
-    print("7. Enter 7 to Exit the program")
-    print("--------------------------------")
-    choice = input("Enter your selection: ")
+    print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
+    print(stylize("HELLO! Welcome to your Plant Watering Schedule.", angry))
+    print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
+    print(stylize("1. Enter 1 to Add a new plant to your schedule", text))
+    print(stylize("2. Enter 2 to Remove a plant from your schedule", text))
+    print(stylize("3. Enter 3 to View which plants need watering today", text))
+    print(stylize("4. Enter 4 to Mark a plant as watered", text))
+    print(stylize("5. Enter 5 to Update the amount of water needed for a plant", text))
+    print(stylize("6. Enter 6 to View entire plant list", text))
+    print(stylize("7. Enter 7 to Exit the program", text))
+    print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
+    choice = input(stylize("Enter your selection: ", selection))
+    print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     return choice
 
 
@@ -40,9 +52,11 @@ while user_choice != "7":
     elif user_choice == "7":
         continue
     else:
-        print("Invalid input. Please enter a number between 1-7")
+        print(stylize("Invalid input. Please enter a number between 1-7", invalid))
 
-    print("--------------------------------")
+    print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     input("Press enter to continue...")
 
-print("Thank you for using the plant watering schedule. See you next time!")
+print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
+print(stylize("Thank you for using the plant watering schedule. See you next time!", angry))
+print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
