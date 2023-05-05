@@ -123,7 +123,7 @@ class PlantSchedule:
                       indent=4,
                       separators=(',', ': '))
             
-        print(f"You have removed {name} from the schedule." + emoji.emojize(':cactus:'))
+        print(f"You have removed {name} from the watering schedule." + emoji.emojize(':cactus:'))
 
     # Function to see which plants need watering
     def plants_need_watering(self):
@@ -140,7 +140,7 @@ class PlantSchedule:
 
             if plant["Frequency"].lower() == "weekly" and difference_days >= 7 or plant["Frequency"].lower() == "fortnightly" and difference_days >= 14 or plant["Frequency"].lower() == "monthly" and difference_days >= 30:
                 print(
-                    f"{plant['Name']}, last watered {difference_days} days ago ({plant['Frequency']} schedule)")
+                    f"{plant['Name']}, last watered {difference_days} days ago ({plant['Frequency']} schedule)" + emoji.emojize(':droplet:'))
 
     # Function to indicate which plant has been watered
     def water_plant(self):
