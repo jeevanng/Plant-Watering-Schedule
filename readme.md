@@ -16,6 +16,138 @@ https://peps.python.org/pep-0008/
 
 I have used pycodestyle to check code for conformance and autoformatted using the program autopep8. Both installed via pip. 
 
+These were the main elements that were not compliant with the pep 8 style guide;
+
+```python
+functions.py:3:47: W291 trailing whitespace
+functions.py:5:1: E302 expected 2 blank lines, found 1
+functions.py:8:1: W293 blank line contains whitespace
+functions.py:12:44: W291 trailing whitespace
+functions.py:13:13: W291 trailing whitespace
+functions.py:32:80: E501 line too long (95 > 79 characters)
+functions.py:32:96: W291 trailing whitespace
+functions.py:33:17: W291 trailing whitespace
+functions.py:36:80: E501 line too long (81 > 79 characters)
+functions.py:37:80: E501 line too long (157 > 79 characters)
+functions.py:46:80: E501 line too long (119 > 79 characters)
+functions.py:47:80: E501 line too long (85 > 79 characters)
+functions.py:53:80: E501 line too long (130 > 79 characters)
+functions.py:59:80: E501 line too long (82 > 79 characters)
+functions.py:60:80: E501 line too long (83 > 79 characters)
+functions.py:67:80: E501 line too long (148 > 79 characters)
+functions.py:71:1: W293 blank line contains whitespace
+functions.py:82:39: W291 trailing whitespace
+functions.py:83:33: E127 continuation line over-indented for visual indent
+functions.py:83:42: W291 trailing whitespace
+functions.py:84:33: E127 continuation line over-indented for visual indent
+functions.py:84:48: E231 missing whitespace after ','
+functions.py:89:80: E501 line too long (116 > 79 characters)
+functions.py:99:45: W291 trailing whitespace
+functions.py:100:37: E127 continuation line over-indented for visual indent
+functions.py:100:46: W291 trailing whitespace
+functions.py:101:37: E127 continuation line over-indented for visual indent
+functions.py:101:52: E231 missing whitespace after ','
+functions.py:102:1: W293 blank line contains whitespace
+functions.py:110:1: W293 blank line contains whitespace
+functions.py:112:80: E501 line too long (89 > 79 characters)
+functions.py:115:80: E501 line too long (221 > 79 characters)
+functions.py:116:80: E501 line too long (114 > 79 characters)
+functions.py:117:1: W293 blank line contains whitespace
+functions.py:121:80: E501 line too long (88 > 79 characters)
+functions.py:128:31: W291 trailing whitespace
+functions.py:130:54: W291 trailing whitespace
+functions.py:132:1: W293 blank line contains whitespace
+functions.py:134:39: W291 trailing whitespace
+functions.py:135:29: E127 continuation line over-indented for visual indent
+functions.py:136:29: E127 continuation line over-indented for visual indent
+functions.py:136:44: E231 missing whitespace after ','
+functions.py:137:1: W293 blank line contains whitespace
+functions.py:143:80: E501 line too long (125 > 79 characters)
+functions.py:149:80: E501 line too long (86 > 79 characters)
+functions.py:150:80: E501 line too long (87 > 79 characters)
+functions.py:157:80: E501 line too long (152 > 79 characters)
+functions.py:158:1: W293 blank line contains whitespace
+functions.py:159:31: W291 trailing whitespace
+functions.py:165:43: W291 trailing whitespace
+functions.py:166:33: E127 continuation line over-indented for visual indent
+functions.py:167:33: E127 continuation line over-indented for visual indent
+functions.py:167:48: E231 missing whitespace after ','
+functions.py:168:1: W293 blank line contains whitespace
+functions.py:169:80: E501 line too long (83 > 79 characters)
+functions.py:173:1: W293 blank line contains whitespace
+functions.py:175:32: W291 trailing whitespace
+functions.py:179:80: E501 line too long (112 > 79 characters)
+functions.py:179:111: E202 whitespace before ')'
+functions.py:180:1: W293 blank line contains whitespace
+functions.py:181:1: W293 blank line contains whitespace
+functions.py:181:5: W292 no newline at end of file
+(.venv) jeevan@DESKTOP-ACCR0VQ:~/JeevanNg_T1A3/src$ pycodestyle schedule_functions.py
+schedule_functions.py:3:47: W291 trailing whitespace
+schedule_functions.py:5:1: E302 expected 2 blank lines, found 1
+schedule_functions.py:8:1: W293 blank line contains whitespace
+schedule_functions.py:12:44: W291 trailing whitespace
+schedule_functions.py:13:13: W291 trailing whitespace
+schedule_functions.py:32:80: E501 line too long (95 > 79 characters)
+schedule_functions.py:32:96: W291 trailing whitespace
+schedule_functions.py:33:17: W291 trailing whitespace
+schedule_functions.py:36:80: E501 line too long (81 > 79 characters)
+schedule_functions.py:37:80: E501 line too long (157 > 79 characters)
+schedule_functions.py:46:80: E501 line too long (119 > 79 characters)
+schedule_functions.py:47:80: E501 line too long (85 > 79 characters)
+schedule_functions.py:53:80: E501 line too long (130 > 79 characters)
+schedule_functions.py:59:80: E501 line too long (82 > 79 characters)
+schedule_functions.py:60:80: E501 line too long (83 > 79 characters)
+schedule_functions.py:67:80: E501 line too long (148 > 79 characters)
+schedule_functions.py:71:1: W293 blank line contains whitespace
+schedule_functions.py:82:39: W291 trailing whitespace
+schedule_functions.py:83:33: E127 continuation line over-indented for visual indent
+schedule_functions.py:83:42: W291 trailing whitespace
+schedule_functions.py:84:33: E127 continuation line over-indented for visual indent
+schedule_functions.py:84:48: E231 missing whitespace after ','
+schedule_functions.py:89:80: E501 line too long (116 > 79 characters)
+schedule_functions.py:99:45: W291 trailing whitespace
+schedule_functions.py:100:37: E127 continuation line over-indented for visual indent
+schedule_functions.py:100:46: W291 trailing whitespace
+schedule_functions.py:101:37: E127 continuation line over-indented for visual indent
+schedule_functions.py:101:52: E231 missing whitespace after ','
+schedule_functions.py:102:1: W293 blank line contains whitespace
+schedule_functions.py:110:1: W293 blank line contains whitespace
+schedule_functions.py:112:80: E501 line too long (89 > 79 characters)
+schedule_functions.py:115:80: E501 line too long (221 > 79 characters)
+schedule_functions.py:116:80: E501 line too long (114 > 79 characters)
+schedule_functions.py:117:1: W293 blank line contains whitespace
+schedule_functions.py:121:80: E501 line too long (88 > 79 characters)
+schedule_functions.py:124:1: W293 blank line contains whitespace
+schedule_functions.py:127:1: W293 blank line contains whitespace
+schedule_functions.py:128:31: W291 trailing whitespace
+schedule_functions.py:130:54: W291 trailing whitespace
+schedule_functions.py:132:1: W293 blank line contains whitespace
+schedule_functions.py:134:39: W291 trailing whitespace
+schedule_functions.py:135:29: E127 continuation line over-indented for visual indent
+schedule_functions.py:136:29: E127 continuation line over-indented for visual indent
+schedule_functions.py:136:44: E231 missing whitespace after ','
+schedule_functions.py:137:1: W293 blank line contains whitespace
+schedule_functions.py:143:80: E501 line too long (125 > 79 characters)
+schedule_functions.py:149:80: E501 line too long (86 > 79 characters)
+schedule_functions.py:150:80: E501 line too long (87 > 79 characters)
+schedule_functions.py:157:80: E501 line too long (152 > 79 characters)
+schedule_functions.py:158:1: W293 blank line contains whitespace
+schedule_functions.py:159:31: W291 trailing whitespace
+schedule_functions.py:165:43: W291 trailing whitespace
+schedule_functions.py:166:33: E127 continuation line over-indented for visual indent
+schedule_functions.py:167:33: E127 continuation line over-indented for visual indent
+schedule_functions.py:167:48: E231 missing whitespace after ','
+schedule_functions.py:168:1: W293 blank line contains whitespace
+schedule_functions.py:169:80: E501 line too long (83 > 79 characters)
+schedule_functions.py:173:1: W293 blank line contains whitespace
+schedule_functions.py:175:32: W291 trailing whitespace
+schedule_functions.py:179:80: E501 line too long (112 > 79 characters)
+schedule_functions.py:179:111: E202 whitespace before ')'
+schedule_functions.py:180:1: W293 blank line contains whitespace
+schedule_functions.py:181:1: W293 blank line contains whitespace
+schedule_functions.py:181:5: W292 no newline at end of file
+```
+
 # List of Features
 
 This terminal application will allow a user to create their own plant watering schedule for three different frequencies; weekly, fortnightly and monthly. 

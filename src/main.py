@@ -1,10 +1,11 @@
-import json 
+import json
 from schedule_functions import PlantSchedule
 
 file_name = "data.json"
 
 # Check/create the .json file
 schedule = PlantSchedule(file_name)
+
 
 def create_menu():
     print("1. Enter 1 to Add a new plant to your schedule")
@@ -18,11 +19,12 @@ def create_menu():
     choice = input("Enter your selection: ")
     return choice
 
+
 user_choice = ""
 
 while user_choice != "7":
     user_choice = create_menu()
-    
+
     if user_choice == "1":
         schedule.add_plant()
     elif user_choice == "2":
@@ -36,12 +38,11 @@ while user_choice != "7":
     elif user_choice == "6":
         schedule.view_all_plants()
     elif user_choice == "7":
-        continue 
+        continue
     else:
         print("Invalid input. Please enter a number between 1-7")
-    
+
     print("--------------------------------")
     input("Press enter to continue...")
 
 print("Thank you for using the plant watering schedule. See you next time!")
-    

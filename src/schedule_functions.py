@@ -1,16 +1,17 @@
 import json
 
-from datetime import datetime, date, timedelta 
+from datetime import datetime, date, timedelta
+
 
 class PlantSchedule:
     def __init__(self, file_name):
         self.file_name = file_name
-        
+
         file_name = "data.json"
         data = []
 
-        # Check to see if .json file exists 
-        try: 
+        # Check to see if .json file exists
+        try:
             with open(self.file_name) as f:
                 schedule_data = json.load(f)
             # If it exists, then all fine
@@ -29,12 +30,14 @@ class PlantSchedule:
         print("-------------------------------------------")
 
         while True:
-            frequency = input("Enter frequency of watering (weekly, fortnightly or monthly): ") 
-            try: 
+            frequency = input(
+                "Enter frequency of watering (weekly, fortnightly or monthly): ")
+            try:
                 if frequency.lower() == "q" or frequency.lower() == "quit":
                     exit()
                 if frequency.lower() not in ["weekly", "fortnightly", "monthly"]:
-                    raise ValueError("Invalid input. Please enter 'weekly', 'fortnightly' or 'monthly'. \nOtherwise type 'q' or 'quit' to exit to main menu")
+                    raise ValueError(
+                        "Invalid input. Please enter 'weekly', 'fortnightly' or 'monthly'. \nOtherwise type 'q' or 'quit' to exit to main menu")
                 break
             except ValueError as e:
                 print(e)
@@ -43,20 +46,23 @@ class PlantSchedule:
         print("-------------------------------------------")
 
         while True:
-            last_watered_str = input("Enter the date of when the plant was last watered in this format (YYYY-MM-DD): ")
+            last_watered_str = input(
+                "Enter the date of when the plant was last watered in this format (YYYY-MM-DD): ")
             if last_watered_str.lower() == "q" or last_watered_str.lower() == "quit":
                 exit()
             try:
                 last_watered = datetime.strptime(last_watered_str, '%Y-%m-%d')
                 break
             except ValueError as e:
-                print("Invalid input! Please enter the date in the format YYYY-MM-DD. \nType 'q' or 'quit' to exit to main menu.")
+                print(
+                    "Invalid input! Please enter the date in the format YYYY-MM-DD. \nType 'q' or 'quit' to exit to main menu.")
 
         print(f"{name} was last watered on {last_watered_str}.")
         print("-------------------------------------------")
 
         while True:
-            amount_of_water = input("Enter how much water the plant needs (mL): ")
+            amount_of_water = input(
+                "Enter how much water the plant needs (mL): ")
             if amount_of_water.lower() == "q" or amount_of_water.lower() == "quit":
                 exit()
             try:
@@ -68,7 +74,7 @@ class PlantSchedule:
 
         print(f"This plant needs {amount_of_water} mL every {frequency[:-2]}.")
         print("-------------------------------------------")
-        
+
         with open(self.file_name) as f:
             data = json.load(f)
             data.append({
@@ -79,14 +85,15 @@ class PlantSchedule:
             })
 
         with open(self.file_name, "w") as json_file:
-            json.dump(data, json_file, 
-                                indent=4,  
-                                separators=(',',': '))
+            json.dump(data, json_file,
+                      indent=4,
+                      separators=(',', ': '))
 
     # Function to remove plant from schedule
     def remove_plant(self):
         print("Remove plant from Watering Schedule")
-        name = input("Enter the name of the plant you wish to remove from the watering schedule (case sensitive): ")
+        name = input(
+            "Enter the name of the plant you wish to remove from the watering schedule (case sensitive): ")
         plant_list = []
 
         with open(self.file_name) as f:
@@ -96,10 +103,10 @@ class PlantSchedule:
                     plant_list.append(plant)
 
         with open(self.file_name, "w") as json_file:
-            json.dump(plant_list, json_file, 
-                                    indent=4,  
-                                    separators=(',',': '))
-    
+            json.dump(plant_list, json_file,
+                      indent=4,
+                      separators=(',', ': '))
+
     # Function to see which plants need watering
     def plants_need_watering(self):
         now = datetime.now()
@@ -107,46 +114,51 @@ class PlantSchedule:
 
         with open(self.file_name) as f:
             data = json.load(f)
-        
+
         for plant in data:
-            last_watered_date_time = datetime.strptime(plant["Last_Watered"], '%Y-%m-%d')
+            last_watered_date_time = datetime.strptime(
+                plant["Last_Watered"], '%Y-%m-%d')
             difference_days = (now - last_watered_date_time).days
 
             if plant["Frequency"].lower() == "weekly" and difference_days >= 7 or plant["Frequency"].lower() == "fortnightly" and difference_days >= 14 or plant["Frequency"].lower() == "monthly" and difference_days >= 30:
-                print(f"{plant['Name']}, last watered {difference_days} days ago ({plant['Frequency']} schedule)")
-            
+                print(
+                    f"{plant['Name']}, last watered {difference_days} days ago ({plant['Frequency']} schedule)")
+
     # Function to indicate which plant has been watered
     def water_plant(self):
         print("Indicate that the plant has been watered")
-        name = input("Type the name of which plant has been watered (case sensitive): ")
+        name = input(
+            "Type the name of which plant has been watered (case sensitive): ")
         today = date.today()
         today_str = today.strftime('%Y-%m-%d')
-        
+
         with open(self.file_name) as f:
             data = json.load(f)
-            
-            for plant in data: 
+
+            for plant in data:
                 if name == plant["Name"]:
-                    plant["Last_Watered"] = today_str 
+                    plant["Last_Watered"] = today_str
                     break
-        
+
         with open('data.json', 'w') as json_file:
-            json.dump(data, json_file, 
-                            indent=4,
-                            separators=(',',': '))
-                    
+            json.dump(data, json_file,
+                      indent=4,
+                      separators=(',', ': '))
+
         print(f"{name} has been marked as watered.")
 
     # Function to update how much water a plant needs
     def update_water_needed(self):
         print("Update amount of water needed for a plant")
-        name = input("Enter the name (case sensitive) of the plant for which you would like to update the watering amount: ")
+        name = input(
+            "Enter the name (case sensitive) of the plant for which you would like to update the watering amount: ")
 
         with open(self.file_name) as f:
             data = json.load(f)
 
             while True:
-                amount_of_water = input("Enter how much water the plant needs (mL): ")
+                amount_of_water = input(
+                    "Enter how much water the plant needs (mL): ")
                 if amount_of_water.lower() == "q" or amount_of_water.lower() == "quit":
                     exit()
                 try:
@@ -154,28 +166,28 @@ class PlantSchedule:
                     if int_amount_of_water >= 0:
                         break
                 except ValueError as e:
-                    print("Invalid input! Please enter a number greater than or equal to 0. \nType 'q' or 'quit' to exit to main menu and start again.")
-            
-            for plant in data: 
+                    print(
+                        "Invalid input! Please enter a number greater than or equal to 0. \nType 'q' or 'quit' to exit to main menu and start again.")
+
+            for plant in data:
                 if name == plant["Name"]:
                     plant["Water_Needed"] = amount_of_water
                     break
 
             with open('data.json', 'w') as json_file:
-                json.dump(data, json_file, 
-                                indent=4,
-                                separators=(',',': '))
-        
+                json.dump(data, json_file,
+                          indent=4,
+                          separators=(',', ': '))
+
         print(f"{name} has been updated to require {amount_of_water} mL of water.")
 
     # Function to view entire plant list
     def view_all_plants(self):
-        
+
         with open(self.file_name) as f:
-            data = json.load(f) 
+            data = json.load(f)
 
             print("Your watering schedule contains the following plants;")
             for plant in data:
-                print(f"{plant['Name']}, last watered {plant['Last_Watered']} ({plant['Frequency']} schedule)" )
-                
-    
+                print(
+                    f"{plant['Name']}, last watered {plant['Last_Watered']} ({plant['Frequency']} schedule)")
