@@ -14,7 +14,7 @@ Find documentation on the style guide below:
 
 https://peps.python.org/pep-0008/
 
-I have used pycodestyle to check code for conformance and autoformatted using the program autopep8. Both installed via pip. 
+I have used pycodestyle to check code for conformance and autoformatted using the program autopep8 and yapf. All installed via pip in the virtual environment. 
 
 These were the main elements that were not compliant with the pep 8 style guide;
 
@@ -228,6 +228,18 @@ Each card has a color to show how much resources in time it will roughly take. T
 ### Feature #6 - Exit program
 
 ![feature_6](./docs/feature_6.png)
+
+# Libraries/Packages Used
+
+1. pytest
+2. json
+3. colored
+4. style
+5. datetime
+6. unittest.mock
+7. pycodestyle
+8. autopep8
+9. yapf
 
 # Testing
 

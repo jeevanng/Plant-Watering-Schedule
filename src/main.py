@@ -1,5 +1,6 @@
 import json
 import colored
+import style 
 
 from schedule_functions import PlantSchedule
 from colored import fg, bg, attr
@@ -19,13 +20,13 @@ def create_menu():
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     print(stylize("HELLO! Welcome to your Plant Watering Schedule.", angry))
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
-    print(stylize("1. Enter 1 to Add a new plant to your schedule", text))
-    print(stylize("2. Enter 2 to Remove a plant from your schedule", text))
-    print(stylize("3. Enter 3 to View which plants need watering today", text))
-    print(stylize("4. Enter 4 to Mark a plant as watered", text))
-    print(stylize("5. Enter 5 to Update the amount of water needed for a plant", text))
-    print(stylize("6. Enter 6 to View entire plant list", text))
-    print(stylize("7. Enter 7 to Exit the program", text))
+    print(style.bold("1.") + (stylize(" Enter 1 to Add a new plant to your schedule", text)))
+    print(style.bold("2.") + (stylize(" Enter 2 to Remove a plant from your schedule", text)))
+    print(style.bold("3.") + (stylize(" Enter 3 to View which plants need watering today", text)))
+    print(style.bold("4.") + (stylize(" Enter 4 to Mark a plant as watered", text)))
+    print(style.bold("5.") + (stylize(" Enter 5 to Update the amount of water needed for a plant", text)))
+    print(style.bold("6.") + (stylize(" Enter 6 to View entire plant list", text)))
+    print(style.bold("7.") + (stylize(" Enter 7 to Exit the program", text)))
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     choice = input(stylize("Enter your selection: ", selection))
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")

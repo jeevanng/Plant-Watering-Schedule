@@ -1,5 +1,6 @@
 import json
 import colored
+import style
 
 from datetime import datetime, date, timedelta
 from colored import fg, bg, attr
@@ -203,5 +204,5 @@ class PlantSchedule:
 
             print(stylize("Your watering schedule contains the following plants;", angry))
             for plant in data:
-                print(
-                    f"{plant['Name']}, last watered {plant['Last_Watered']} ({plant['Frequency']} schedule)")
+                print(style.bold(style.italic(
+                    f"{plant['Name']}")) + f", last watered {plant['Last_Watered']} ({plant['Frequency']} schedule)")
