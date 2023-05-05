@@ -240,6 +240,7 @@ Each card has a color to show how much resources in time it will roughly take. T
 7. pycodestyle
 8. autopep8
 9. yapf
+10. emoji
 
 # Testing
 

@@ -1,6 +1,7 @@
 import json
 import colored
 import style
+import emoji
 
 from datetime import datetime, date, timedelta
 from colored import fg, bg, attr
@@ -37,7 +38,7 @@ class PlantSchedule:
         print(stylize("Add plant to Watering Schedule", angry))
         name = input(stylize("Enter name of plant: ", text))
 
-        print(f"You entered {name}.")
+        print(f"You entered {name}." + emoji.emojize(':herb:'))
         print(
             f"{fg(1)}--------------------------------------------------------------{attr(0)}")
 
@@ -121,6 +122,8 @@ class PlantSchedule:
             json.dump(plant_list, json_file,
                       indent=4,
                       separators=(',', ': '))
+            
+        print(f"You have removed {name} from the schedule." + emoji.emojize(':cactus:'))
 
     # Function to see which plants need watering
     def plants_need_watering(self):

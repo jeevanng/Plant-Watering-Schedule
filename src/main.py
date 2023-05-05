@@ -1,6 +1,7 @@
 import json
 import colored
 import style 
+import emoji
 
 from schedule_functions import PlantSchedule
 from colored import fg, bg, attr
@@ -18,7 +19,7 @@ schedule = PlantSchedule(file_name)
 
 def create_menu():
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
-    print(stylize("HELLO! Welcome to your Plant Watering Schedule.", angry))
+    print(emoji.emojize(':seedling:') + stylize(" HELLO! Welcome to your Plant Watering Schedule.", angry) + emoji.emojize(':seedling:'))
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     print(style.bold("1.") + (stylize(" Enter 1 to Add a new plant to your schedule", text)))
     print(style.bold("2.") + (stylize(" Enter 2 to Remove a plant from your schedule", text)))
@@ -59,5 +60,5 @@ while user_choice != "7":
     input("Press enter to continue...")
 
 print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
-print(stylize("Thank you for using the plant watering schedule. See you next time!", angry))
+print(stylize("Thank you for using the plant watering schedule. See you next time!", angry) + emoji.emojize(':shamrock:'))
 print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")

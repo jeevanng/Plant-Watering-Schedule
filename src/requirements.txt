@@ -1,0 +1,7 @@
+autopep8==2.0.2
+colored==1.4.4
+emoji==2.2.0
+pycodestyle==2.10.0
+style==1.1.6
+tomli==2.0.1
+yapf==0.33.0
