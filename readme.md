@@ -266,7 +266,7 @@ Otherwise, the table has been converted for mark up language;
 
 ## Testing Method #2 (PYTEST)
 
-I have used pytest to test two main functions of the program. Whether the function adds the plants and other corresponding information correctly, and whether it removes the plant/information and shows the correct length for the total data. 
+I have used pytest to test two main functions of the program. Whether the function adds the plants and other corresponding information correctly, and whether it removes the plant/information and shows the correct length for the total data once a plant has been removed. 
 
 Here is the code;
 
@@ -305,7 +305,7 @@ def test_remove_plant():
     assert len(data) == 2
 ```
 
-I have created a test_data.json file, to store the information without altering the originals. I change the assertions, according to what data is in the .json file, and which variables I am testing. I will comment out the remove testing part and vice versa, to test each function separately. 
+I have created a test_data.json file, to store the information without altering the originals. I change the assertions according to what data is in the .json file, and which variables I am testing. I will comment out the remove testing part and vice versa, to test each function separately. 
 
 # Design Help Documentation 
 
