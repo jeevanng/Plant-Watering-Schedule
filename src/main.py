@@ -6,6 +6,7 @@ import emoji
 from schedule_functions import PlantSchedule
 from colored import fg, bg, attr
 from colored import stylize
+from clear import clear 
 
 angry = bg("indian_red_1a") + fg("white") + colored.attr("bold")
 invalid = colored.fg("red")
@@ -58,6 +59,7 @@ while user_choice != "7":
 
     print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
     input("Press enter to continue...")
+    clear()
 
 print(f"{fg(1)}--------------------------------------------------------------{attr(0)}")
 print(stylize("Thank you for using the plant watering schedule. See you next time!", angry) + emoji.emojize(':shamrock:'))

@@ -243,6 +243,7 @@ Link to trello board: https://trello.com/b/GK7ZGXRW/plant-watering-schedule
 8. autopep8
 9. yapf
 10. emoji
+11. clear
 
 # Testing
 
