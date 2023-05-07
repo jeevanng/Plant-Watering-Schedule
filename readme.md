@@ -6,6 +6,10 @@ Written by Jeevan Ng
 
 https://github.com/jeevanng/Plant-Watering-Schedule
 
+# Link to Presentation 
+
+https://youtu.be/cMG5SvOGg1w
+
 # Code Style Guide 
 
 The code styling guide followed is PEP 8. 
@@ -470,6 +474,15 @@ https://github.com/jeevanng/Plant-Watering-Schedule
 
 ![instruction_11](./docs/help_11.png)
 
-15. Now type "./run.sh" into the terminal, again without the quotation marks and press enter. 
+15. Now type "./run.sh" into the terminal, again without the quotation marks and press enter. This will run the program
 
-16. 
+![instruction_12](./docs/help_12.png)
+
+16. Your screen should now look like this. 
+    - Follow the prompts to use the program, all data will be saved automatically.
+
+![instruction_13](./docs/help_13.png)
+
+17. When you wish to use the program again, complete steps 8 to 15. 
+
+18. Enjoy and I hope your plant babies thrive!
