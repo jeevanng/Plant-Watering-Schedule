@@ -394,3 +394,82 @@ I have created a test_data.json file, to store the information without altering 
 
 # Design Help Documentation 
 
+## Steps to Install Application 
+
+1. To use this program, there are a few software/hardware requirements. 
+    - Minimum hardware requirements; 
+        - Intel Core i5 processor or equivalent
+        - 4 GB RAM (8 GB preferred)
+        - 15 GB available hard disk space
+        - Internet connection
+
+    - Software requirements: This program requires the use of Python and can be installed via the instructions below;
+        - Python version 3 
+            - Install using this guide;
+                - Windows: https://wsvincent.com/install-python/#install-python-on-windows
+                - Mac: https://wsvincent.com/install-python/#install-python-on-macos
+                - Linux: https://wsvincent.com/install-python/#install-python-on-linux
+                - Chromebook: https://wsvincent.com/install-python/#install-python-on-chromebook
+    - The next requirement is an application to view the program easily. We will install a program called Visual Studio Code. 
+        - Follow the instructions below for your operating system;
+            - https://code.visualstudio.com/docs/setup/setup-overview
+
+
+2. Please click this link; 
+
+https://github.com/jeevanng/Plant-Watering-Schedule
+
+3. Click the green ( <> Code ) button
+
+![instruction_1](./docs/help_1.png)
+
+4. Now, click the "Download ZIP" button.
+
+![instruction_2](./docs/help_2.png)
+
+    - This will download the zip file into your downloads folder. 
+    - Move this folder wherever you wish. For the purpose of this help documentation, we will move it to the desktop. 
+5. Now, right click the zip file and extract it to the desktop. Extract to "Plant-Watering-Schedule-main"
+
+![instruction_3](./docs/help_3.png)
+
+6. This should extract the files to a folder
+
+7. The folder should appear like this.
+
+![instruction_4](./docs/help_4.png)
+
+8. Open Visual Studio Code 
+    - You can open the program in the start menu 
+
+![instruction_5](./docs/help_5.png)
+
+9. Once you open Visual Studio Code. It should look like this. 
+
+![instruction_6](./docs/help_6.png)
+
+10. Now, click file and open folder.
+    - Open the folder named "Plant-Watering-Schedule-main"
+
+![instruction_7](./docs/help_7.png)
+
+11. The folder should be open in Visual Studio Code now.
+    - The menu on the left shows which folder is open
+
+![instruction_8](./docs/help_8.png)
+
+12. Click the "Terminal" button in the top navigation menu and open a new Terminal 
+
+![instruction_9](./docs/help_9.png)
+
+13. It should open up a new terminal in the program in the bottom half of the screen. 
+
+![instruction_10](./docs/help_10.png)
+
+14. In the terminal below, type in "cd src" and press enter without the quotation marks. This will basically tell the program to move into the src folder. 
+
+![instruction_11](./docs/help_11.png)
+
+15. Now type "./run.sh" into the terminal, again without the quotation marks and press enter. 
+
+16. 
